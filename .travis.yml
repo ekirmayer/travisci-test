@@ -11,9 +11,12 @@ before_install:
   - VBoxManage --version
 install:
   - sudo apt install -y vagrant curl
+  - vagrant plugin list
+  - vagrant plugin install vagrant-vbguest
+  - vagrant plugin list
   - vagrant --version
 script:
-  - vagrant up --provider=VirtualBox
+  - vagrant up --provider=virtualbox
   - curl -I localhost:5000
 addons:
   apt:
