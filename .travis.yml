@@ -15,4 +15,6 @@ script:
   - curl -I localhost:5000
 addons:
   apt:
+    sources:
+      -
     update: true
