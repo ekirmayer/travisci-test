@@ -13,7 +13,7 @@ install:
   - sudo apt install -y vagrant curl
   - vagrant --version
 script:
-  - vagrant up
+  - vagrant up --provider=VirtualBox
   - curl -I localhost:5000
 addons:
   apt:
