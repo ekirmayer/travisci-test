@@ -10,7 +10,8 @@ before_install:
   - sudo apt-get install virtualbox-5.2 curl
   - VBoxManage --version
 install:
-  - sudo apt install -y https://releases.hashicorp.com/vagrant/2.2.2/vagrant_2.2.2_x86_64.deb
+  - wget https://releases.hashicorp.com/vagrant/2.2.2/vagrant_2.2.2_x86_64.deb
+  - sudo apt-get install -y ./vagrant_2.2.2_x86_64.deb
   - vagrant plugin list
   - vagrant --version
 script:
