@@ -1,7 +1,7 @@
 languge: python
 install:
-  - apt install -y virtualbox
-  - apt install -y vagrant
+  - sudo apt install -y virtualbox
+  - sudo apt install -y vagrant
 script:
   - vagrant --version
 addons:
