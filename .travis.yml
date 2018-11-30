@@ -12,6 +12,7 @@ before_install:
 install:
   - wget https://releases.hashicorp.com/vagrant/2.2.2/vagrant_2.2.2_x86_64.deb
   - sudo apt-get install -y ./vagrant_2.2.2_x86_64.deb
+  - vagrant plugin install vagrant-vbguest
   - vagrant plugin list
   - vagrant --version
 script:
