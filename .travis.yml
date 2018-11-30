@@ -1,5 +1,6 @@
 languge: python
 before_install:
+  - sudo apt install -y virtualbox-dkms linux-headers-generic
   - sudo apt-get install -y virtualbox --fix-missing
   - VBoxManage --version
 install:
