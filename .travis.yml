@@ -1,0 +1,9 @@
+languge: python
+install:
+  - apt install -y virtualbox
+  - apt install -y vagrant
+script:
+  - vagrant --version
+addons:
+  apt:
+    update: true
