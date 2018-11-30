@@ -1,9 +1,11 @@
 languge: python
 install:
   - sudo apt install -y virtualbox
-  - sudo apt install -y vagrant
+  - sudo apt install -y vagrant curl
 script:
   - vagrant --version
+  - vagrant up
+  - curl -I localhost:5000
 addons:
   apt:
     update: true
