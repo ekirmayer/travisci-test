@@ -1,11 +1,13 @@
 languge: python
 dist: xenial
 before_install:
-  - uname -a
-  - sudo apt install -y linux-generic linux-image-generic linux-headers-generic linux-signed-generic linux-headers-gcp
-  - sudo apt install -y virtualbox-dkms
-  - sudo dpkg-reconfigure virtualbox-dkms
-  - sudo apt-get install -y virtualbox --fix-missing
+  - sudo apt-get update && sudo apt-get dist-upgrade && sudo apt-get autoremove
+  - sudo apt-get -y install gcc make linux-headers-$(uname -r) dkms
+  - wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
+  - wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key add -
+  - sudo sh -c 'echo "deb http://download.virtualbox.org/virtualbox/debian $(lsb_release -sc) contrib" >> /etc/apt/sources.list'
+  - sudo apt-get update
+  - sudo apt-get install virtualbox-5.2
   - VBoxManage --version
 install:
   - sudo apt install -y vagrant curl
