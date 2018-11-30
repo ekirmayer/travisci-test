@@ -1,6 +1,6 @@
 languge: python
 before_install:
-  - sudo apt-get install -y virtualbox-5.2
+  - sudo apt-get install -y virtualbox --fix-missing
   - VBoxManage --version
 install:
   - sudo apt install -y vagrant curl
