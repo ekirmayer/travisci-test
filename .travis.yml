@@ -1,9 +1,11 @@
 languge: python
+before_install:
+  - sudo apt-get install -y virtualbox-5.2
+  - VBoxManage --version
 install:
-  - sudo apt install -y virtualbox
   - sudo apt install -y vagrant curl
-script:
   - vagrant --version
+script:
   - vagrant up
   - curl -I localhost:5000
 addons:
