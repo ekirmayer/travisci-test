@@ -1,5 +1,6 @@
 languge: python
 before_install:
+  - uname -a
   - sudo apt install -y virtualbox-dkms linux-headers-generic
   - sudo dpkg-reconfigure virtualbox-dkms
   - sudo apt-get install -y virtualbox --fix-missing
