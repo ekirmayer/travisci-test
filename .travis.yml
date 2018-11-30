@@ -7,12 +7,10 @@ before_install:
   - wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key add -
   - sudo sh -c 'echo "deb http://download.virtualbox.org/virtualbox/debian $(lsb_release -sc) contrib" >> /etc/apt/sources.list'
   - sudo apt-get update
-  - sudo apt-get install virtualbox-5.2
+  - sudo apt-get install virtualbox-5.2 curl
   - VBoxManage --version
 install:
-  - sudo apt install -y vagrant curl
-  - vagrant plugin list
-  - sudo vagrant plugin install vagrant-vbguest
+  - sudo apt install -y https://releases.hashicorp.com/vagrant/2.2.2/vagrant_2.2.2_x86_64.deb
   - vagrant plugin list
   - vagrant --version
 script:
