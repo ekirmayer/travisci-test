@@ -2,7 +2,7 @@ languge: python
 dist: xenial
 before_install:
   - uname -a
-  - sudo apt install -y linux-generic linux-image-generic linux-headers-generic linux-signed-generic
+  - sudo apt install -y linux-generic linux-image-generic linux-headers-generic linux-signed-generic linux-headers-gcp
   - sudo apt install -y virtualbox-dkms
   - sudo dpkg-reconfigure virtualbox-dkms
   - sudo apt-get install -y virtualbox --fix-missing
