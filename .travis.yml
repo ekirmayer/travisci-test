@@ -12,7 +12,7 @@ before_install:
 install:
   - sudo apt install -y vagrant curl
   - vagrant plugin list
-  - vagrant plugin install vagrant-vbguest
+  - sudo vagrant plugin install vagrant-vbguest
   - vagrant plugin list
   - vagrant --version
 script:
