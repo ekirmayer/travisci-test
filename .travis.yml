@@ -16,7 +16,7 @@ install:
   - vagrant plugin list
   - vagrant --version
 script:
-  - sudo vagrant up --provider=virtualbox
+  - travis_wait vagrant up --provider=virtualbox
   - curl -I localhost:5000
 addons:
   apt:
