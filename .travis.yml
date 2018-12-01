@@ -16,10 +16,8 @@ install:
   - vagrant plugin list
   - vagrant --version
 script:
-  - vagrant up --provider=virtualbox
+  - sudo vagrant up --provider=virtualbox
   - curl -I localhost:5000
 addons:
   apt:
-    sources:
-      -
     update: true
