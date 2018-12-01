@@ -9,11 +9,11 @@ before_install:
   - sudo apt-get update
   - sudo apt-get install virtualbox-5.2 curl
   - VBoxManage --version
-  - wget https://releases.hashicorp.com/vagrant/2.2.2/vagrant_2.2.2_x86_64.deb
-  - sudo apt-get install -y ./vagrant_2.2.2_x86_64.deb
-  - vagrant plugin install vagrant-vbguest
+  - sudo wget https://releases.hashicorp.com/vagrant/2.2.2/vagrant_2.2.2_x86_64.deb
+  - sudo apt-get install -y /home/travis/build/ekirmayer/travisci-test/vagrant_2.2.2_x86_64.deb
+  - sudo vagrant plugin install vagrant-vbguest
 install:
-  - travis_wait 80 vagrant up --provider=virtualbox
+  - sudo travis_wait 80 vagrant up --provider=virtualbox
   - VBoxManage list vms -l
 script:
 
