@@ -9,15 +9,14 @@ before_install:
   - sudo apt-get update
   - sudo apt-get install virtualbox-5.2 curl
   - VBoxManage --version
-install:
   - wget https://releases.hashicorp.com/vagrant/2.2.2/vagrant_2.2.2_x86_64.deb
   - sudo apt-get install -y ./vagrant_2.2.2_x86_64.deb
   - vagrant plugin install vagrant-vbguest
-  - vagrant plugin list
-  - vagrant --version
+install:
+  - travis_wait 40 vagrant up --provider=virtualbox
 script:
-  - travis_wait vagrant up --provider=virtualbox
-  - curl -I localhost:5000
+
+  - curl -I localhost:8080
 addons:
   apt:
     update: true
