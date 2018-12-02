@@ -6,11 +6,11 @@ Vagrant.configure("2") do |config|
       vb.gui = false
       vb.memory = '512'
       vb.cpus = 1
-      vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
     end
     config.vm.box = "ubuntu/xenial32"
     config.vm.network "forwarded_port", guest: 80, host: 8080
     config.vm.boot_timeout = 6000
+    config.vm.synced_folder ".", "/vagrant", disabled: true
 
     config.vm.provision "shell", inline: <<-SHELL
         apt-get -y update
