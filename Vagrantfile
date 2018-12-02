@@ -6,6 +6,7 @@ Vagrant.configure("2") do |config|
       vb.gui = false
       vb.memory = '512'
       vb.cpus = 1
+      vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
     end
     config.vm.box = "ubuntu/xenial32"
     config.vm.network "forwarded_port", guest: 80, host: 8080
