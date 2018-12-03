@@ -10,7 +10,7 @@ before_install:
   - sudo apt-get install virtualbox-5.2 curl
   - VBoxManage --version
   - sudo wget https://releases.hashicorp.com/vagrant/2.2.2/vagrant_2.2.2_x86_64.deb
-  - sudo apt-get install -y /home/travis/build/ekirmayer/travisci-test/vagrant_2.2.2_x86_64.deb
+  - sudo dpkg -i https://releases.hashicorp.com/vagrant/2.2.2/vagrant_2.2.2_x86_64.deb
   - sudo vagrant plugin install vagrant-vbguest
 install:
   - travis_wait 40 vagrant up --provider=virtualbox
