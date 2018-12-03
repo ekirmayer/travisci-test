@@ -10,7 +10,6 @@ Vagrant.configure("2") do |config|
     config.vm.box = "ubuntu/xenial32"
     config.vm.network "forwarded_port", guest: 80, host: 8080
     config.vm.boot_timeout = 6000
-    config.vm.synced_folder "/home/travis/build/ekirmayer", "/vagrant", disabled: true, SharedFoldersEnableSymlinksCreate: false
 
 
     config.vm.provision "shell", inline: <<-SHELL
